@@ -1,0 +1,157 @@
+/* Pomodoro Styles */
+
+.pomodoro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.timer-card {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--border);
+}
+
+.mode-selector {
+    display: flex;
+    gap: 0.5rem;
+    background: var(--bg-body);
+    padding: 0.25rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 2rem;
+}
+
+.mode-btn {
+    border: none;
+    background: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: all 0.2s;
+}
+
+.mode-btn.active {
+    background: var(--bg-card);
+    color: var(--primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.timer-display {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.circle-progress svg {
+    transform: rotate(-90deg);
+}
+
+.circle-progress circle {
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
+}
+
+.circle-progress .bg {
+    stroke: var(--bg-body);
+}
+
+.circle-progress .progress {
+    stroke: var(--primary);
+    transition: stroke-dashoffset 1s linear;
+}
+
+.time-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-main);
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.control-btn {
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: var(--bg-body);
+    color: var(--text-main);
+    transition: all 0.2s;
+}
+
+.control-btn:hover {
+    transform: scale(1.1);
+}
+
+.control-btn.primary {
+    background: var(--primary);
+    color: white;
+    width: auto;
+    border-radius: var(--radius-md);
+    padding: 0 2rem;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.control-btn.secondary {
+    background: var(--secondary);
+    color: white;
+    width: auto;
+    border-radius: var(--radius-md);
+    padding: 0 2rem;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.tasks-overlay {
+    width: 100%;
+    text-align: center;
+}
+
+.tasks-overlay h3 {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.current-task-display {
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+}

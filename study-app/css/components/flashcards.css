@@ -1,0 +1,229 @@
+/* Flashcards Styles */
+
+.flashcards-container {
+    padding: 1rem;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.decks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.deck-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.deck-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.deck-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.deck-info {
+    flex: 1;
+}
+
+.deck-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.deck-info p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.progress-bar-mini {
+    height: 4px;
+    background: var(--bg-body);
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.progress-bar-mini .fill {
+    height: 100%;
+    border-radius: 2px;
+}
+
+.play-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.deck-card:hover .play-btn {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* Study Session (Flip Cards) */
+.study-session-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 120px);
+}
+
+.session-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.text-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.text-btn:hover {
+    color: var(--text-main);
+}
+
+.card-scene {
+    flex: 1;
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.study-card {
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    cursor: pointer;
+}
+
+.study-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: var(--radius-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: #f8fafc;
+    /* Ligeramente diferente para distinguir */
+    border-color: var(--primary);
+}
+
+[data-theme="dark"] .card-back {
+    background: #1e293b;
+}
+
+.card-face .label {
+    position: absolute;
+    top: 1.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.card-face .content {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+.card-face .hint {
+    position: absolute;
+    bottom: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.session-controls {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.rate-btn {
+    border: none;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.rate-btn:hover {
+    transform: translateY(-2px);
+}
+
+.spacer {
+    flex: 1;
+}

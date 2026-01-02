@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyFlow - Tu Espacio de Estudio</title>
+
+    <!-- Google Fonts: Outfit (Moderno y Juvenil) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos: Tabler Icons (Open source, modernos) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+    <!-- Estilos Principales -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div id="app" class="app-container">
+        <!-- Sidebar de Navegación -->
+        <nav class="sidebar">
+            <div class="brand">
+                <i class="ti ti-school"></i>
+                <span>StudyFlow</span>
+            </div>
+
+            <ul class="nav-links">
+                <li class="active"><a href="#dashboard" class="nav-btn"><i class="ti ti-dashboard"></i>
+                        <span>Panel</span></a></li>
+                <li><a href="#planner" class="nav-btn"><i class="ti ti-calendar"></i> <span>Planificador</span></a></li>
+                <li><a href="#pomodoro" class="nav-btn"><i class="ti ti-clock-play"></i> <span>Pomodoro</span></a></li>
+                <li><a href="#notes" class="nav-btn"><i class="ti ti-notebook"></i> <span>Apuntes</span></a></li>
+                <li><a href="#flashcards" class="nav-btn"><i class="ti ti-cards"></i> <span>Flashcards</span></a></li>
+                <li><a href="#quiz" class="nav-btn"><i class="ti ti-brain"></i> <span>Tests</span></a></li>
+                <li><a href="#ai-assistant" class="nav-btn"><i class="ti ti-robot"></i> <span>Asistente IA</span></a>
+                </li>
+            </ul>
+
+            <div class="user-profile-mini" onclick="window.location.hash='#profile'" style="cursor: pointer;">
+                <div class="avatar">U</div>
+                <div class="info">
+                    <span class="name">Estudiante</span>
+                    <span class="level">Nivel 1</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h1 id="page-title">Panel Principal</h1>
+                <div class="actions">
+                    <button class="icon-btn" aria-label="Notificaciones"><i class="ti ti-bell"></i></button>
+                    <button id="theme-toggle" class="icon-btn" aria-label="Cambiar Tema"><i
+                            class="ti ti-moon"></i></button>
+                </div>
+            </header>
+
+            <!-- Área Dinámica de Vistas -->
+            <div id="view-container" class="view-container">
+                <!-- Aquí se cargará el contenido dinámicamente -->
+                <div class="loading-state">
+                    <div class="spinner"></div>
+                    <p>Cargando tu estudio...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script Principal -->
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

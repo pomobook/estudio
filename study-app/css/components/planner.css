@@ -1,0 +1,184 @@
+/* Planner Styles */
+
+.planner-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.planner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.planner-header h2 {
+    text-transform: capitalize;
+    color: var(--text-main);
+}
+
+.planner-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.btn-icon {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.btn-icon:hover {
+    background: var(--bg-body);
+    color: var(--primary);
+}
+
+/* Calendar Grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.weekday {
+    background: var(--bg-card);
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.day {
+    background: var(--bg-card);
+    min-height: 100px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.day:hover {
+    background-color: var(--bg-body);
+}
+
+.day.empty {
+    background-color: var(--bg-body);
+    cursor: default;
+}
+
+.day-number {
+    font-weight: 500;
+    font-size: 0.9rem;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.day.today .day-number {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Events in Calendar */
+.events {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.event-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.event-dot.exam {
+    background-color: #ef4444;
+}
+
+/* Red */
+.event-dot.task {
+    background-color: var(--accent);
+}
+
+/* Teal */
+
+/* Upcoming List */
+.upcoming-list {
+    margin-top: 1rem;
+}
+
+.upcoming-list h3 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.event-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--bg-card);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    margin-bottom: 0.75rem;
+}
+
+.date-badge {
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 0.5rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+}
+
+.date-badge.warning {
+    background: #ffedd5;
+    color: #ea580c;
+}
+
+.date-badge .day {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.date-badge .month {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.event-details h4 {
+    margin-bottom: 0.25rem;
+}
+
+.event-details p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
